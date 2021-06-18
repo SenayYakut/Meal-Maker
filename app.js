@@ -2,32 +2,32 @@ const menu = {
     _courses: {
         appetizers: [],
         mains: [],
-        desserts: []
+        desserts: [],
     },
     get courses() {
         return {
             appetizers: this.appetizers,
             mains: this.mains,
-            desserts: this.desserts
+            desserts: this.desserts,
         }
     },
     addDishToCourse(courseName, dishName, dishPrice) {
         const dish = {
-            name: this.dishName,
-            price: this.dishPrice
+            name: dishName,
+            price: dishPrice,
         };
-        this._courses[courseName].push(dish)
+        this._courses[courseName].push(dish);
     },
     getRandomDishFromCourse(courseName) {
         const dishes = this._courses[courseName];
-        const ind = Math.floor(Math.random() * dishes.length);
-        return dishes[ind];
+        const randomIndx = Math.floor(Math.random() * dishes.length);
+        return dishes[randomIndx];
     },
     generateRandomMeal() {
         const appetizer = this.getRandomDishFromCourse('appetizers');
         const main = this.getRandomDishFromCourse('mains');
         const dessert = this.getRandomDishFromCourse('desserts');
-        const totalPrice = this.appetizer.price + this.main.price + this.dessert.price;
+        const totalPrice = appetizer.price + main.price + dessert.price;
 
         return `Your meal is ${appetizer.name}, ${main.name}, ${dessert.name}. The price is $${totalPrice}.`;
 
@@ -53,10 +53,19 @@ const menu = {
     }
 
 };
-
 menu.addDishToCourse('appetizers', 'Caesar Salad', 9.25);
-menu.addDishToCourse('mains', 'Salmon', 15.25);
-menu.addDishToCourse('desserts', 'Baklava', 8.25);
+menu.addDishToCourse('appetizers', 'Fruit Salad', 10.25);
+menu.addDishToCourse('appetizers', 'Spring Salad', 8.25);
 
-let meal = menu.generateRandomMeal();
+menu.addDishToCourse('mains', 'Salmon', 15.25);
+menu.addDishToCourse('mains', 'Steak', 25.25);
+menu.addDishToCourse('mains', 'Tofu', 10.25);
+
+
+menu.addDishToCourse('desserts', 'Baklava', 8.25);
+menu.addDishToCourse('desserts', 'Rice Puding', 10.25);
+menu.addDishToCourse('desserts', 'Ice Cream', 9.25);
+
+
+const meal = menu.generateRandomMeal();
 console.log(meal);
