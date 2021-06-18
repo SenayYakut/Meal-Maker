@@ -10,7 +10,7 @@ Install the project locally
 ```
 
 ## Usage
-```bash
+```javaScript
 console.log(meal); will generate a different meal each time
 ```
 
