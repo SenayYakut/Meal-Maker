@@ -11,7 +11,7 @@ Install the project locally
 
 ## Usage
 ```javaScript
-console.log(meal); will generate a different meal each time
+console.log(meal); //will generate a different meal each time
 ```
 
 
