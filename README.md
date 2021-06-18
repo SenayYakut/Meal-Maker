@@ -10,7 +10,9 @@ Install the project locally
 ```
 
 ## Usage
-//console.log(meal); will generate a different meal each time
+```bash
+console.log(meal); will generate a different meal each time
+```
 
 
 ## Contributing
